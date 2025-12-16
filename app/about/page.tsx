@@ -1,8 +1,16 @@
+'use client';
+
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
+interface CompanyValue {
+  title: string;
+  description: string;
+  icon: string;
+}
+
 export default function About() {
-  const values = [
+  const values: CompanyValue[] = [
     {
       title: "Distinction",
       description: "We focus on delivering marketing solutions that help our clients stand out in competitive markets. We don't just offer services—we create impactful experiences that leave a lasting impression on audiences.",
@@ -34,6 +42,7 @@ export default function About() {
     <>
       <Header />
       
+      {/* Hero Section */}
       <section className="about-hero">
         <div className="container">
           <h1>About Khartoum Inter Film</h1>
@@ -55,6 +64,7 @@ export default function About() {
         `}</style>
       </section>
 
+      {/* About Content Section */}
       <section className="section">
         <div className="container">
           <div className="about-content">
@@ -104,6 +114,7 @@ export default function About() {
         `}</style>
       </section>
 
+      {/* Values Section */}
       <section className="section" style={{background: '#f8f9fa'}}>
         <div className="container">
           <div className="section-title">
@@ -123,6 +134,34 @@ export default function About() {
         </div>
         
         <style jsx>{`
+          .section {
+            padding: 80px 0;
+          }
+          
+          .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+          }
+          
+          .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+          }
+          
+          .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+          }
+          
+          .section-title p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+          }
+          
           .values-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
