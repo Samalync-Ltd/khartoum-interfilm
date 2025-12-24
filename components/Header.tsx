@@ -28,13 +28,70 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { id: 'home', label: 'Home', icon: '🏠' },
-    { id: 'services', label: 'Services', icon: '🎯' },
-    { id: 'about', label: 'About', icon: '👥' },
-    { id: 'team', label: 'Team', icon: '🌟' },
-    { id: 'projects', label: 'Projects', icon: '📂' },
-    { id: 'contact', label: 'Contact', icon: '📞' },
-  ];
+  { 
+    id: 'home', 
+    label: 'Home', 
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+    )
+  },
+  { 
+    id: 'services', 
+    label: 'Services', 
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="12" y1="16" x2="12" y2="12"></line>
+        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+      </svg>
+    )
+  },
+  { 
+    id: 'about', 
+    label: 'About', 
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+        <circle cx="12" cy="7" r="4"></circle>
+      </svg>
+    )
+  },
+  { 
+    id: 'team', 
+    label: 'Team', 
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+        <circle cx="9" cy="7" r="4"></circle>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+      </svg>
+    )
+  },
+  { 
+    id: 'projects', 
+    label: 'Projects', 
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+      </svg>
+    )
+  },
+  { 
+    id: 'contact', 
+    label: 'Contact', 
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+        <polyline points="22,6 12,13 2,6"></polyline>
+      </svg>
+    )
+  },
+];
 
   return (
     <header className={`creative-header ${scrolled ? 'scrolled' : ''}`}>
@@ -234,11 +291,18 @@ const Header = () => {
         }
 
         .nav-icon {
-          font-size: 1.25rem;
-          margin-bottom: 4px;
-          color: var(--dark);
-          transition: color 0.3s ease;
-        }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+  color: var(--dark);
+  transition: color 0.3s ease;
+}
+
+.nav-icon svg {
+  width: 20px;
+  height: 20px;
+}
 
         .nav-label {
           font-size: 0.85rem;
